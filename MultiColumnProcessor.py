@@ -1,5 +1,14 @@
 import pandas as pd
+import numpy as np
 from sklearn import preprocessing
+
+"""
+MultiColumnLabelEncoder class can be used to label all categorical colomns in a pandas data-frame
+via preprocessing.LabelEncoder. After this transformation the colomns data-types will remain the same
+as the original ones (e.g. categorical colomns will be still categorical). The object created here 
+(after fitting) can be saved and later be used for other pandas data-frames with the same categorical 
+colomns.
+"""
 
 ##
 class MultiColumnLabelEncoder:
@@ -22,7 +31,7 @@ class MultiColumnLabelEncoder:
         self.__Get_Dtypes(data)
         ##
         self.__catColumns = [cat for cat in self.dataTypes.keys()
-                           if (self.dataTypes[cat].name == 'category')]
+                             if (self.dataTypes[cat].name == 'category')]
         ##
         for col in self.__catColumns:
             le = preprocessing.LabelEncoder()
@@ -49,5 +58,51 @@ class MultiColumnLabelEncoder:
                 transformedCols[i] = transformedCols[i].astype(j)
             except:
                 pass
+        ##
+        return transformedCols
+
+##
+class MultiColumnOneHotEncoder:
+    ##
+    def __init__(self):
+        self.__catColumns = []
+        self.OneHotEncoder = {}
+
+    ##
+    def __getCategoryColomns(self, data=pd.DataFrame()):
+        catColumns = []
+        for i, j in enumerate(data):
+            if (data.dtypes[i].name == 'category'):
+                catColumns.append(j)
+            else:
+                continue
+        ##
+        self.__catColumns = catColumns
+        ##
+        return
+
+    ##
+    def fit(self, data):
+        ##
+        self.__getCategoryColomns(data)
+        ##
+        for col in self.__catColumns:
+            OneHotEncoder = preprocessing.OneHotEncoder(sparse=False)
+            OneHotEncoder.fit(np.array(data.loc[:, col]).reshape(-1, 1))
+            self.OneHotEncoder[col] = OneHotEncoder
+        ##
+        return self
+
+    def transform(self, data):
+        ##
+        transformedCols = data.drop(self.__catColumns, axis=1)
+        ##
+        for col in self.__catColumns:
+            OneHotEncoder = self.OneHotEncoder[col]
+            transformed = OneHotEncoder.transform(np.array(data.loc[:, col]).reshape(-1, 1))
+            transformed = pd.DataFrame(transformed)
+            transformed.columns = [str(col) + '_' + str(c) for c in transformed.columns]
+            transformed.set_index(transformedCols.index, inplace=True)
+            transformedCols = pd.concat([transformedCols, transformed], axis=1)
         ##
         return transformedCols
