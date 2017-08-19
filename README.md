@@ -6,6 +6,10 @@
 
 3- MultiColumnScaler is the same as preprocessing.MinMaxScaler in scikit-learn. The created object can be saved for future uses.
 
+## How to install:
+Type the following command in the terminal:
+
+pip install MultiColProcessor
 
 ## How to clone this repository via the command line in Linux:
 1- First, install git if it is not already installed by typing the following command in the terminal:
