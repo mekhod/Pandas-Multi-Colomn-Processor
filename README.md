@@ -10,4 +10,4 @@
 ## How to install:
 Type the following command in the terminal:
 
-pip install MultiColProcessor
+~$ pip install MultiColProcessor
