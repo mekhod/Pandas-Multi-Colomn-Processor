@@ -1,8 +1,8 @@
 setup(
-  name = 'mypackage',
-  packages = ['mypackage'], # this must be the same as the name above
+  name = 'MultiColumnProcessor',
+  packages = ['MultiColumnProcessor'],
   version = '0.1',
-  description = 'A random test lib',
+  description = 'A simple package to process pandas colomns using',
   author = 'Peter Downs',
   author_email = 'peterldowns@gmail.com',
   url = 'https://github.com/peterldowns/mypackage', # use the URL to the github repo
