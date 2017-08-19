@@ -8,6 +8,6 @@
 
 
 ## How to install:
-#Type the following command in the terminal prompt:
+# Type the following command in the terminal prompt:
 
 pip install MultiColProcessor
