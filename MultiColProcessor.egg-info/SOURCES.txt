@@ -1,0 +1,8 @@
+setup.cfg
+setup.py
+MultiColProcessor/MultiColProcessor.py
+MultiColProcessor/__init__.py
+MultiColProcessor.egg-info/PKG-INFO
+MultiColProcessor.egg-info/SOURCES.txt
+MultiColProcessor.egg-info/dependency_links.txt
+MultiColProcessor.egg-info/top_level.txt
