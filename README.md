@@ -27,5 +27,5 @@ MultiColumnScaler = mcp.MultiColomnScaler()
 MultiColumnScaler.fit(data=transformed2)
 finalDataFrame = MultiColumnScaler.transform(data=transformed2)
 
-**note: MultiColumnLabelEncoder, MultiColumnOneHotEncoder and/or MultiColumnScaler can be saved and later be used for new data-frames with the same categorical colomns.
+**note: MultiColumnLabelEncoder, MultiColumnOneHotEncoder and/or MultiColumnScaler can be saved and later be used for new data-frames with the same categorical colomns.**
 
