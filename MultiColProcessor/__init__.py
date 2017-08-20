@@ -1,4 +1,1 @@
 from MultiColProcessor import MultiColProcessor
-#from MultiColProcessor import MultiColomnLabelEncoder
-#from MultiColProcessor import MultiColomnOneHotEncoder
-#from MultiColProcessor import MultiColomnScaler
