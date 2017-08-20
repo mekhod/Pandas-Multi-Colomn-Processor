@@ -15,7 +15,7 @@ Type the following command in the terminal:
 ### Example:
 from MultiColProcessor import MultiColProcessor as mcp
 
-MultiColumnLabelEncoder = mcp.MultiColomnLabelEncoder()
+\>>> MultiColumnLabelEncoder = mcp.MultiColomnLabelEncoder()
 MultiColumnLabelEncoder.fit(data=aDataFrame)
 transformed1 = MultiColumnLabelEncoder.transform(data=aDataFrame)
  
