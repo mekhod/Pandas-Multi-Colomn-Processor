@@ -16,16 +16,16 @@ Type the following command in the terminal:
 from MultiColProcessor import MultiColProcessor as mcp
 
 \>>> MultiColumnLabelEncoder = mcp.MultiColomnLabelEncoder()
-MultiColumnLabelEncoder.fit(data=aDataFrame)
-transformed1 = MultiColumnLabelEncoder.transform(data=aDataFrame)
+\>>> MultiColumnLabelEncoder.fit(data=aDataFrame)
+\>>> transformed1 = MultiColumnLabelEncoder.transform(data=aDataFrame)
+\>>>  
+\>>> MultiColumnOneHotEncoder = mcp.MultiColomnOneHotEncoder()
+\>>> MultiColumnOneHotEncoder.fit(data=transformed1)
+\>>> transformed2 = MultiColumnOneHotEncoder.transform(data=transformed1)
  
-MultiColumnOneHotEncoder = mcp.MultiColomnOneHotEncoder()
-MultiColumnOneHotEncoder.fit(data=transformed1)
-transformed2 = MultiColumnOneHotEncoder.transform(data=transformed1)
- 
-MultiColumnScaler = mcp.MultiColomnScaler()
-MultiColumnScaler.fit(data=transformed2)
-finalDataFrame = MultiColumnScaler.transform(data=transformed2)
+\>>> MultiColumnScaler = mcp.MultiColomnScaler()
+\>>> MultiColumnScaler.fit(data=transformed2)
+\>>> finalDataFrame = MultiColumnScaler.transform(data=transformed2)
 
 **note: MultiColumnLabelEncoder, MultiColumnOneHotEncoder and MultiColumnScaler objects can be saved and later be used to transform new data-frames with the same categorical colomns.**
 
