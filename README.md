@@ -10,13 +10,13 @@
 ### How to install:
 Type the following command in the terminal:
 
-~$ pip install MultiColProcessor
+`~$ pip install MultiColProcessor`
 
 ### Example:
-\>>> from MultiColProcessor import MultiColProcessor as mcp\
+`\>>> from MultiColProcessor import MultiColProcessor as mcp\
 \>>>\
 \>>> MultiColumnLabelEncoder = mcp.MultiColomnLabelEncoder()\
-\>>> MultiColumnLabelEncoder.fit(data=aDataFrame)\
+\>>> MultiColumnLabelEncoder.fit(data=pandas.DataFrame())\
 \>>> transformed1 = MultiColumnLabelEncoder.transform(data=aDataFrame)\
 \>>>\
 \>>> MultiColumnOneHotEncoder = mcp.MultiColomnOneHotEncoder()\
@@ -26,7 +26,7 @@ Type the following command in the terminal:
 \>>> MultiColumnScaler = mcp.MultiColomnScaler()\
 \>>> MultiColumnScaler.fit(data=transformed2)\
 \>>> finalDataFrame = MultiColumnScaler.transform(data=transformed2)\
-\>>>
+\>>>`
 
 **note: The MultiColumnLabelEncoder, MultiColumnOneHotEncoder and MultiColumnScaler objects can be saved and later be used to transform new data-frames with the same categorical colomns.**
 
